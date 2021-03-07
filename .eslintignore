@@ -1,0 +1,6 @@
+# .eslintignore
+
+dist
+
+# Test results
+coverage

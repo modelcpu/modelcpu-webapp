@@ -1,0 +1,31 @@
+{
+  "name": "modelcpu-webapp",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run lint:fix && vite build",
+    "build:ci": "npm run lint && vite build",
+    "lint": "eslint . && prettier . --check",
+    "lint:fix": "eslint . --fix && prettier . --write",
+    "serve": "vite preview",
+    "test": "jest .",
+    "test:ci": "npm run test",
+    "test:unit-coverage": "jest test/unit --coverage"
+  },
+  "dependencies": {
+    "vue": "^3.0.5",
+    "vue-router": "^4.0.4",
+    "vuex": "^4.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.1.5",
+    "@vue/compiler-sfc": "^3.0.5",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.21.0",
+    "eslint-plugin-jest": "^24.1.8",
+    "eslint-plugin-vue": "^7.7.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "vite": "^2.0.5"
+  }
+}
