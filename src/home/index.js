@@ -7,8 +7,10 @@
  * @copyright Copyright © 2021 [ModelCPU](https://modelcpu.com).
  */
 
-import HomePage from "./HomePage.vue";
+import HomePage from './HomePage.vue';
+import store from './home.store';
 
-export default {
-  routes: [{ path: "/", component: HomePage }],
+export default (app, { routes, modules }) => {
+  modules.home = store;
+  routes.push({ path: '/', component: HomePage });
 };

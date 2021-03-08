@@ -7,8 +7,8 @@
  * @copyright Copyright © 2021 [ModelCPU](https://modelcpu.com).
  */
 
-describe("A dummmy test", () => {
-  it("should add up", () => {
+describe('A dummmy test', () => {
+  it('should add up', () => {
     expect(1 + 1).toBe(2);
   });
 });

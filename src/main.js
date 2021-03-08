@@ -7,17 +7,32 @@
  * @copyright Copyright © 2021 [ModelCPU](https://modelcpu.com).
  */
 
-import { createApp } from "vue";
-import App from "./App.vue";
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createApp } from 'vue';
+import App from './App.vue';
+import { createRouter, createWebHashHistory } from 'vue-router';
+import { createStore } from 'vuex';
 
-import "./index.css";
+import home from './home';
+import ui from './ui';
 
-import home from "./home";
+const routes = [];
+const modules = {};
+const context = { routes, modules };
 
-const router = createRouter({
-  history: createWebHashHistory(),
-  routes: [...home.routes],
-});
+createApp(App)
+  // Core elements.
+  .use(ui, context)
 
-createApp(App).use(router).mount("#app");
+  // Application elements.
+  .use(home, context)
+
+  // Create the router and Vuex store *after* application elements have
+  // populated routes and store modules.
+  .use(
+    createRouter({
+      history: createWebHashHistory(),
+      routes,
+    })
+  )
+  .use(createStore({ modules }))
+  .mount('#app');
